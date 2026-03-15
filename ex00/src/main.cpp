@@ -6,7 +6,7 @@
 /*   By: enchevri <enchevri@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/02 15:02:29 by enchevri          #+#    #+#             */
-/*   Updated: 2026/03/03 18:04:58 by enchevri         ###   ########lyon.fr   */
+/*   Updated: 2026/03/15 14:37:50 by enchevri         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ void testIncrementOverflow()
 	{
 		Bureaucrat ceo("CEO", 1);
 		std::cout << BWHITE << ceo << RESET;
-		
+
 		std::cout << BYELLOW << "➜ Trying to increment beyond grade 1..." << RESET << std::endl;
 		ceo.incrementGrade();
 		std::cout << BWHITE << ceo << RESET;
