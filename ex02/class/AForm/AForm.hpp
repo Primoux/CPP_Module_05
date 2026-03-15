@@ -6,7 +6,7 @@
 /*   By: enchevri <enchevri@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/15 14:48:43 by enchevri          #+#    #+#             */
-/*   Updated: 2026/03/15 17:40:00 by enchevri         ###   ########lyon.fr   */
+/*   Updated: 2026/03/15 19:18:45 by enchevri         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,10 @@ class AForm
 	const int			_signGrade;
 	const int			_execGrade;
 
+	protected:
+	AForm();
 	public:
 	// CONSTRUCTORS
-	AForm();
 	AForm(std::string const &name, int signGrade, int execGrade);
 	AForm(AForm const &original);
 	AForm &operator=(AForm const &other);
@@ -56,6 +57,14 @@ class AForm
 		public:
 		virtual const char* what() const throw();
 	};
+	class FormNotSignedException : public std::exception
+	{
+		public:
+		virtual const char* what() const throw();
+	};
+
+	protected:
+	void checkExecute(Bureaucrat const &executor) const;
 };
 
 std::ostream &operator<<(std::ostream &o, AForm const &obj);

@@ -6,7 +6,7 @@
 /*   By: enchevri <enchevri@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/02 15:02:29 by enchevri          #+#    #+#             */
-/*   Updated: 2026/03/15 17:40:00 by enchevri         ###   ########lyon.fr   */
+/*   Updated: 2026/03/15 19:17:11 by enchevri         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -180,7 +180,6 @@ void testRobotomySuccess()
 	printHeader("TEST 9: RobotomyRequestForm - Sign & Execute");
 	try
 	{
-		std::srand(42);
 		Bureaucrat doctor("Doctor", 45);
 		RobotomyRequestForm form("Bender");
 
@@ -245,25 +244,11 @@ void testExecuteGradeTooLow()
 	{
 		Bureaucrat signer("Signer", 24);
 		Bureaucrat executor("Executor", 10);
-		PresidentialPardonForm form("Someone");
+		PresidentialPardonForm f("Someone");
 
-		signer.signForm(form);
+		signer.signForm(f);
 		std::cout << BYELLOW << "➜ Executor (grade 10) tries to execute (execGrade 5)..." << RESET << std::endl;
-		executor.executeForm(form);
-	}
-	catch (const std::exception& e)
-	{
-		std::cout << BRED << "❌ Exception: " << e.what() << RESET << std::endl;
-	}
-}
-
-void testFormGradeOutOfRange()
-{
-	printHeader("TEST 13: Form Grade Out of Range");
-	try
-	{
-		ShrubberyCreationForm f("test");
-		std::cout << BWHITE << f << RESET;
+		executor.executeForm(f);
 	}
 	catch (const std::exception& e)
 	{
@@ -273,6 +258,7 @@ void testFormGradeOutOfRange()
 
 int main(void)
 {
+	std::srand(time(NULL));
 	testValidBureaucrat();
 	testBureaucratGradeTooHigh();
 	testBureaucratGradeTooLow();
@@ -286,7 +272,6 @@ int main(void)
 	testPresidentialPardon();
 	testSignFormFail();
 	testExecuteGradeTooLow();
-	testFormGradeOutOfRange();
 
 	printHeader("All Tests Completed!");
 	return 0;

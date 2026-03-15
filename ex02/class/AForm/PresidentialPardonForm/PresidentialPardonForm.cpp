@@ -6,7 +6,7 @@
 /*   By: enchevri <enchevri@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/15 17:40:00 by enchevri          #+#    #+#             */
-/*   Updated: 2026/03/15 17:40:00 by enchevri         ###   ########lyon.fr   */
+/*   Updated: 2026/03/15 19:00:56 by enchevri         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,10 +50,7 @@ PresidentialPardonForm::~PresidentialPardonForm()
 
 void PresidentialPardonForm::execute(Bureaucrat const &executor) const
 {
-	if (!getIsSigned())
-		throw AForm::GradeTooLowException();
-	if (executor.getGrade() > getExecGrade())
-		throw AForm::GradeTooLowException();
+	checkExecute(executor);
 
-	std::cout << PRESIDENTIALCOLOR << _target << " has been pardoned by Zaphod Beeblebrox." << RESET << std::endl;
+	std::cout << PRESIDENTIALCOLOR << _target << " has been pardoned." << RESET << std::endl;
 }

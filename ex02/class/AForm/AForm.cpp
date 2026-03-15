@@ -24,11 +24,11 @@ _name("Default"), _isSigned(false), _signGrade(1), _execGrade(1)
 AForm::AForm(std::string const &name, int signGrade, int execGrade) :
 _name(name), _isSigned(false), _signGrade(signGrade), _execGrade(execGrade)
 {
-	std::cout << FORM << "Assignation constructor called for " << *this;
 	if (this->_signGrade < 1 || this->_execGrade < 1)
 		throw AForm::GradeTooHighException();
 	if (this->_signGrade > 150 || this->_execGrade > 150)
 		throw AForm::GradeTooLowException();
+	std::cout << FORM << "Assignation constructor called for " << *this;
 }
 
 AForm::AForm(AForm const &original) :
@@ -85,6 +85,19 @@ const char* AForm::GradeTooHighException::what() const throw()
 const char* AForm::GradeTooLowException::what() const throw()
 {
 	return "Grade is too low!";
+}
+
+const char* AForm::FormNotSignedException::what() const throw()
+{
+	return "Form is not signed!";
+}
+
+void AForm::checkExecute(Bureaucrat const &executor) const
+{
+	if (!this->_isSigned)
+		throw AForm::FormNotSignedException();
+	if (executor.getGrade() > this->_execGrade)
+		throw AForm::GradeTooLowException();
 }
 
 std::ostream &operator<<(std::ostream &o, AForm const &obj)

@@ -52,10 +52,7 @@ RobotomyRequestForm::~RobotomyRequestForm()
 
 void RobotomyRequestForm::execute(Bureaucrat const &executor) const
 {
-	if (!getIsSigned())
-		throw AForm::GradeTooLowException();
-	if (executor.getGrade() > getExecGrade())
-		throw AForm::GradeTooLowException();
+	checkExecute(executor);
 
 	std::cout << ROBOTOMYCOLOR << "Bzzzzzt... drilling noises..." << RESET << std::endl;
 	if (std::rand() % 2)
