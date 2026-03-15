@@ -11,7 +11,7 @@ class Bureaucrat
 {
 	private:
 	const std::string	_name;
-	int 		_grade;
+	int 				_grade;
 	void checkGrade(void);
 
 	public:
