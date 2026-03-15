@@ -6,13 +6,13 @@
 /*   By: enchevri <enchevri@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/02 15:09:47 by enchevri          #+#    #+#             */
-/*   Updated: 2026/03/03 18:01:42 by enchevri         ###   ########lyon.fr   */
+/*   Updated: 2026/03/15 16:28:59 by enchevri         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
-#include "../../inc/color.h"
+#include "color.h"
 #include <iostream>
 #include <ostream>
 #include <string>
