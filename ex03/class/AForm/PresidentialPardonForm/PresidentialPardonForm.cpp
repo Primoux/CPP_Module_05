@@ -6,12 +6,11 @@
 /*   By: enchevri <enchevri@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/15 17:40:00 by enchevri          #+#    #+#             */
-/*   Updated: 2026/03/15 20:06:18 by enchevri         ###   ########lyon.fr   */
+/*   Updated: 2026/03/15 20:06:23 by enchevri         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PresidentialPardonForm.hpp"
-#include "AForm.hpp"
 #include "Bureaucrat.hpp"
 #include "color.h"
 #include <iostream>
@@ -56,4 +55,7 @@ void PresidentialPardonForm::execute(Bureaucrat const &executor) const
 	std::cout << PRESIDENTIALCOLOR << _target << " has been pardoned." << RESET << std::endl;
 }
 
-
+AForm *PresidentialPardonForm::createPresidential(std::string const &target)
+{
+	return (new PresidentialPardonForm(target));
+}

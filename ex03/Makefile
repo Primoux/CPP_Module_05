@@ -17,7 +17,8 @@ SRCS			=	src/main.cpp \
 					class/AForm/AForm.cpp \
 					class/AForm/ShrubberyCreationForm/ShrubberyCreationForm.cpp \
 					class/AForm/RobotomyRequestForm/RobotomyRequestForm.cpp \
-					class/AForm/PresidentialPardonForm/PresidentialPardonForm.cpp
+					class/AForm/PresidentialPardonForm/PresidentialPardonForm.cpp \
+					class/Intern/Intern.cpp
 
 
 OBJS			= $(patsubst %.cpp,$(OBJ_DIR)%.o,$(SRCS))
