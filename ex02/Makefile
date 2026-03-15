@@ -9,12 +9,18 @@ CFLAGS			= -std=c++98 -Wall -Wextra -Werror
 DEPS			= -MMD -MP
 
 OBJ_DIR			= .build/
-INCLUDE_DIR		= -Iinc/ -Iclass/Bureaucrat/ -Iclass/Form/
+INCLUDE_DIR		= -Iinc/ -Iclass/Bureaucrat/ -Iclass/AForm/ \
+				  -Iclass/ShrubberyCreationForm/ \
+				  -Iclass/RobotomyRequestForm/ \
+				  -Iclass/PresidentialPardonForm/
 INCLUDES 		= $(INCLUDE_DIR)
 
 SRCS			=	src/main.cpp \
 					class/Bureaucrat/Bureaucrat.cpp \
-					class/Form/Form.cpp
+					class/AForm/AForm.cpp \
+					class/ShrubberyCreationForm/ShrubberyCreationForm.cpp \
+					class/RobotomyRequestForm/RobotomyRequestForm.cpp \
+					class/PresidentialPardonForm/PresidentialPardonForm.cpp
 
 
 OBJS			= $(patsubst %.cpp,$(OBJ_DIR)%.o,$(SRCS))

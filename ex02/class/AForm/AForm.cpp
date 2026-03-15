@@ -21,17 +21,6 @@ _name("Default"), _isSigned(false), _signGrade(1), _execGrade(1)
 	std::cout << FORM << "Default constructor called" << std::endl;
 }
 
-AForm::~AForm()
-{
-	std::cout << FORM << "Destructor called" << std::endl;
-}
-
-AForm::AForm(AForm const &original) :
-_name(original._name), _isSigned(original._isSigned), _signGrade(original._signGrade), _execGrade(original._execGrade)
-{
-	std::cout << FORM << "Copy constructor called for " << *this;
-}
-
 AForm::AForm(std::string const &name, int signGrade, int execGrade) :
 _name(name), _isSigned(false), _signGrade(signGrade), _execGrade(execGrade)
 {
@@ -42,12 +31,23 @@ _name(name), _isSigned(false), _signGrade(signGrade), _execGrade(execGrade)
 		throw AForm::GradeTooLowException();
 }
 
+AForm::AForm(AForm const &original) :
+_name(original._name), _isSigned(original._isSigned), _signGrade(original._signGrade), _execGrade(original._execGrade)
+{
+	std::cout << FORM << "Copy constructor called for " << *this;
+}
+
 AForm &AForm::operator=(AForm const &other)
 {
 	std::cout << FORM << "Operator = called for " << *this;
 	std::cout << BYELLOW << "Warning:" RESET " only the boolean can be copied" << std::endl;
 	this->_isSigned = other._isSigned;
 	return (*this);
+}
+
+AForm::~AForm()
+{
+	std::cout << FORM << "Destructor called" << std::endl;
 }
 
 const std::string AForm::getName(void) const
