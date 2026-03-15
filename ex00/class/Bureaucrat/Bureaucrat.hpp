@@ -13,7 +13,7 @@ class Bureaucrat
 	void checkGrade(void);
 
 	public:
-	// CONSTRUCTOR
+	// CONSTRUCTORS
 	Bureaucrat();
 	~Bureaucrat();
 	Bureaucrat(Bureaucrat const &original);
@@ -22,14 +22,14 @@ class Bureaucrat
 	// OPERATOR
 	Bureaucrat &operator=(Bureaucrat const &other);
 
-	//MEMBER FUNCTION
+	// MEMBER FUNCTIONS
 	const std::string	getName(void) const;
 	int 				getGrade(void) const;
 	void 				incrementGrade(void);
 	void 				decrementGrade(void);
 
 
-	// EXEPCTION
+	// EXCEPTIONS
 	class GradeTooHighException : public std::exception
 	{
 		public:

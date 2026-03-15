@@ -1,6 +1,6 @@
 .PHONY : all re fclean clean run
 
-NAME			= Bureaucrat
+NAME			= Desk
 
 MAKEFLAGS		+= -j $$(nproc)
 
