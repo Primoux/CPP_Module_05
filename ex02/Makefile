@@ -10,17 +10,17 @@ DEPS			= -MMD -MP
 
 OBJ_DIR			= .build/
 INCLUDE_DIR		= -Iinc/ -Iclass/Bureaucrat/ -Iclass/AForm/ \
-				  -Iclass/ShrubberyCreationForm/ \
-				  -Iclass/RobotomyRequestForm/ \
-				  -Iclass/PresidentialPardonForm/
+				  -Iclass/AForm/ShrubberyCreationForm/ \
+				  -Iclass/AForm/RobotomyRequestForm/ \
+				  -Iclass/AForm/PresidentialPardonForm/
 INCLUDES 		= $(INCLUDE_DIR)
 
 SRCS			=	src/main.cpp \
 					class/Bureaucrat/Bureaucrat.cpp \
 					class/AForm/AForm.cpp \
-					class/ShrubberyCreationForm/ShrubberyCreationForm.cpp \
-					class/RobotomyRequestForm/RobotomyRequestForm.cpp \
-					class/PresidentialPardonForm/PresidentialPardonForm.cpp
+					class/AForm/ShrubberyCreationForm/ShrubberyCreationForm.cpp \
+					class/AForm/RobotomyRequestForm/RobotomyRequestForm.cpp \
+					class/AForm/PresidentialPardonForm/PresidentialPardonForm.cpp
 
 
 OBJS			= $(patsubst %.cpp,$(OBJ_DIR)%.o,$(SRCS))
