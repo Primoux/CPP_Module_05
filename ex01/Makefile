@@ -9,7 +9,7 @@ CFLAGS			= -std=c++98 -Wall -Wextra -Werror
 DEPS			= -MMD -MP
 
 OBJ_DIR			= .build/
-INCLUDE_DIR		= -Iinc/ -Iclass/Bureaucrat/ -Iclass/Form/
+INCLUDE_DIR		= -Iinc/
 INCLUDES 		= $(INCLUDE_DIR)
 
 SRCS			=	src/main.cpp \
