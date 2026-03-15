@@ -36,7 +36,8 @@ run: all
 valgrind: all
 	valgrind --leak-check=full --show-leak-kinds=all ./$(NAME)
 
-re: fclean all
+re: fclean
+	make -j
 
 clean:
 	rm -rf $(OBJ_DIR)
