@@ -6,7 +6,7 @@
 /*   By: enchevri <enchevri@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/15 17:40:00 by enchevri          #+#    #+#             */
-/*   Updated: 2026/03/15 17:40:00 by enchevri         ###   ########lyon.fr   */
+/*   Updated: 2026/03/16 13:36:08 by enchevri         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator=(ShrubberyCreationForm co
 	if (this != &other)
 	{
 		AForm::operator=(other);
-		_target = other._target;
+		this->_target = other._target;
 	}
 	return (*this);
 }

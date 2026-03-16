@@ -6,7 +6,7 @@
 /*   By: enchevri <enchevri@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/15 17:40:00 by enchevri          #+#    #+#             */
-/*   Updated: 2026/03/15 20:06:18 by enchevri         ###   ########lyon.fr   */
+/*   Updated: 2026/03/16 13:42:14 by enchevri         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ PresidentialPardonForm &PresidentialPardonForm::operator=(PresidentialPardonForm
 	if (this != &other)
 	{
 		AForm::operator=(other);
-		_target = other._target;
+		this->_target = other._target;
 	}
 	return (*this);
 }
@@ -53,7 +53,7 @@ void PresidentialPardonForm::execute(Bureaucrat const &executor) const
 {
 	checkExecute(executor);
 
-	std::cout << PRESIDENTIALCOLOR << _target << " has been pardoned." << RESET << std::endl;
+	std::cout << PRESIDENTIALCOLOR << _target << " has been pardoned by Zaphod Beeblebrox." << RESET << std::endl;
 }
 
 
