@@ -6,7 +6,7 @@
 /*   By: enchevri <enchevri@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/02 15:02:29 by enchevri          #+#    #+#             */
-/*   Updated: 2026/03/15 20:32:04 by enchevri         ###   ########lyon.fr   */
+/*   Updated: 2026/03/16 10:40:13 by enchevri         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -263,7 +263,7 @@ void testInternMakeForm()
 	try
 	{
 		Intern intern;
-		Bureaucrat boss("Boss", 1);
+		Bureaucrat boss("Boss", 6);
 
 		AForm *f1 = intern.makeForm("ShrubberyCreationForm", "garden");
 		boss.signForm(*f1);
@@ -303,7 +303,6 @@ void testInternUnknownForm()
 
 int main(void)
 {
-	std::srand(time(NULL));
 	testValidBureaucrat();
 	testBureaucratGradeTooHigh();
 	testBureaucratGradeTooLow();

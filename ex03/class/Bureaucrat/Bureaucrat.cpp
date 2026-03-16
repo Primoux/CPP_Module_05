@@ -6,7 +6,7 @@
 /*   By: enchevri <enchevri@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/02 15:09:47 by enchevri          #+#    #+#             */
-/*   Updated: 2026/03/15 17:40:00 by enchevri         ###   ########lyon.fr   */
+/*   Updated: 2026/03/16 10:42:34 by enchevri         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ void Bureaucrat::signForm(AForm &form)
 	}
 	catch (const std::exception &e)
 	{
-		std::cout << BUREAUCRATCOLOR << this->_name << " couldn't sign " << form.getName() << " because " << e.what() << RESET << std::endl;
+		std::cout << BRED << this->_name << " couldn't sign " << form.getName() << " because " << e.what() << RESET << std::endl;
 	}
 }
 
@@ -96,7 +96,7 @@ void Bureaucrat::executeForm(AForm const &form)
 	}
 	catch (const std::exception &e)
 	{
-		std::cout << BUREAUCRATCOLOR << this->_name << " couldn't execute " << form.getName() << " because " << e.what() << RESET << std::endl;
+		std::cout << BRED << this->_name << " couldn't execute " << form.getName() << " because " << e.what() << RESET << std::endl;
 	}
 }
 

@@ -54,6 +54,12 @@ void RobotomyRequestForm::execute(Bureaucrat const &executor) const
 {
 	checkExecute(executor);
 
+	static bool seeded = false;
+	if (!seeded)
+	{
+		std::srand(time(NULL));
+		seeded = true;
+	}
 	std::cout << ROBOTOMYCOLOR << "Bzzzzzt... drilling noises..." << RESET << std::endl;
 	if (std::rand() % 2)
 		std::cout << ROBOTOMYCOLOR << _target << " has been robotomized successfully!" << RESET << std::endl;
