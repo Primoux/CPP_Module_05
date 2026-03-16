@@ -6,7 +6,7 @@
 /*   By: enchevri <enchevri@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/15 17:40:00 by enchevri          #+#    #+#             */
-/*   Updated: 2026/03/15 17:40:00 by enchevri         ###   ########lyon.fr   */
+/*   Updated: 2026/03/16 13:21:23 by enchevri         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,6 @@ void RobotomyRequestForm::execute(Bureaucrat const &executor) const
 		std::srand(time(NULL));
 		seeded = true;
 	}
-	std::cout << ROBOTOMYCOLOR << "Bzzzzzt... drilling noises..." << RESET << std::endl;
 	if (std::rand() % 2)
 		std::cout << ROBOTOMYCOLOR << _target << " has been robotomized successfully!" << RESET << std::endl;
 	else
